@@ -10,9 +10,79 @@
 
 <body>
   
-hai namaku vanko aku tinggal di jogja dan aku suka main game karena itu seru 
-  aku terkadang bermain roblox kadang main ff kadang juga main pubg mobile aku lebih suka main roblox dengan map sotot fivem karena
-  kayak gta beneran bisa buat konten,buat ngesad,streaming dll dah ya segitu aja ya makasih
+export const PixelAvatar = () => {
+  return (
+    <div className="relative w-32 h-32 mx-auto animate-float">
+      {/* Simple pixel art character using CSS */}
+      <div className="absolute inset-0 grid grid-cols-8 grid-rows-8 gap-0">
+        {/* Row 1-2: Hair */}
+        {[...Array(8)].map((_, i) => (
+          <div 
+            key={`r1-${i}`} 
+            className={`${i >= 2 && i <= 5 ? 'bg-secondary' : 'bg-transparent'}`} 
+          />
+        ))}
+        {[...Array(8)].map((_, i) => (
+          <div 
+            key={`r2-${i}`} 
+            className={`${i >= 1 && i <= 6 ? 'bg-secondary' : 'bg-transparent'}`} 
+          />
+        ))}
+        {/* Row 3: Face top */}
+        {[...Array(8)].map((_, i) => (
+          <div 
+            key={`r3-${i}`} 
+            className={`${i >= 1 && i <= 6 ? 'bg-accent' : 'bg-transparent'}`} 
+          />
+        ))}
+        {/* Row 4: Eyes */}
+        {[...Array(8)].map((_, i) => (
+          <div 
+            key={`r4-${i}`} 
+            className={`
+              ${i === 0 || i === 7 ? 'bg-transparent' : ''}
+              ${i === 1 || i === 6 ? 'bg-accent' : ''}
+              ${i === 2 || i === 5 ? 'bg-primary' : ''}
+              ${i === 3 || i === 4 ? 'bg-accent' : ''}
+            `} 
+          />
+        ))}
+        {/* Row 5: Nose */}
+        {[...Array(8)].map((_, i) => (
+          <div 
+            key={`r5-${i}`} 
+            className={`${i >= 1 && i <= 6 ? 'bg-accent' : 'bg-transparent'}`} 
+          />
+        ))}
+        {/* Row 6: Mouth */}
+        {[...Array(8)].map((_, i) => (
+          <div 
+            key={`r6-${i}`} 
+            className={`
+              ${i === 0 || i === 7 ? 'bg-transparent' : ''}
+              ${i === 1 || i === 6 ? 'bg-accent' : ''}
+              ${i >= 2 && i <= 5 ? 'bg-destructive' : ''}
+            `} 
+          />
+        ))}
+        {/* Row 7-8: Body */}
+        {[...Array(8)].map((_, i) => (
+          <div 
+            key={`r7-${i}`} 
+            className={`${i >= 1 && i <= 6 ? 'bg-primary' : 'bg-transparent'}`} 
+          />
+        ))}
+        {[...Array(8)].map((_, i) => (
+          <div 
+            key={`r8-${i}`} 
+            className={`${i >= 2 && i <= 5 ? 'bg-primary' : 'bg-transparent'}`} 
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 </body>
 
 </html>
